@@ -8,8 +8,10 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const serve = (port, filename, dir) => {
     const app = (0, express_1.default)();
+    // for when the user has installed the cli into their local machine
     const packagePath = require.resolve('local-client/build/index.html');
     app.use(express_1.default.static(path_1.default.dirname(packagePath)));
+    // for development mode
     // app.use(
     //   createProxyMiddleware("/", {
     //     target: "http://127.0.0.1:3000/",

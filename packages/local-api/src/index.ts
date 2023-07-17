@@ -5,8 +5,11 @@ import path from 'path';
 export const serve = (port: number, filename: string, dir: string) => {
   const app = express();
 
+  // for when the user has installed the cli into their local machine
   const packagePath = require.resolve('local-client/build/index.html');
   app.use(express.static(path.dirname(packagePath)));
+
+  // for development mode
   // app.use(
   //   createProxyMiddleware("/", {
   //     target: "http://127.0.0.1:3000/",
