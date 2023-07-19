@@ -1,4 +1,5 @@
 import { Dispatch } from "redux";
+import axios from "axios";
 import { ActionType } from "../action-types";
 import {
   UpdateCellAction,
@@ -8,7 +9,7 @@ import {
   Direction,
   Action,
 } from "../actions";
-import { CellTypes } from "../cell";
+import { Cell, CellTypes } from "../cell";
 import bundle from "../../bundler";
 
 export const updateCell = (id: string, content: string): UpdateCellAction => {
@@ -71,3 +72,9 @@ export const createBundle = (cellId: string, input: string) => {
     })
   };
 };  
+
+export const fetchCells = () => {
+  return (dispatch: Dispatch<Action>) => {
+
+  };
+};
