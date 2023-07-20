@@ -39,15 +39,9 @@ const createCellsRouter = (filename, dir) => {
                 }
             }
         }
-        // If reading fails because of missing file
-        // Parse a list of cells from file
-        // Send a list of cells back to the browser
     }));
     router.post("/cells", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        // Take the list of cells from the request obj
-        // serialize them
         const { cells } = req.body;
-        // Write the cells into the file
         yield promises_1.default.writeFile(fullPath, JSON.stringify(cells), "utf8");
         res.send({ status: "ok" });
     }));
